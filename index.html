@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riffle - High Performance Shuffle Service</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-primary: #1a1a2e;
+            --text-primary: #FFFFFF;
+            --text-secondary: #8A8F98;
+            --primary: #3245FF;
+            --gradient: linear-gradient(90deg, #3245FF 0%, #BC3BFF 100%);
+            --card-bg: rgba(255, 255, 255, 0.02);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.5;
+        }
+
+        .hero {
+            padding: 120px 24px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background:
+                radial-gradient(50% 50% at 50% 50%, rgba(50, 69, 255, 0.15) 0%, transparent 100%),
+                radial-gradient(50% 50% at 80% 20%, rgba(188, 59, 255, 0.15) 0%, transparent 100%);
+            pointer-events: none;
+        }
+
+        .brand {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
+        }
+
+        .brand-box {
+            display: inline-block;
+            background: rgba(50, 69, 255, 0.1);
+            padding: 2px 8px;
+            border-radius: 4px;
+            border: 1px solid rgba(50, 69, 255, 0.2);
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .hero h1 {
+            font-size: 80px;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            letter-spacing: -0.03em;
+        }
+
+        .hero h1 .brand {
+            font-size: 92px;
+            display: block;
+            margin: 8px 0;
+        }
+
+        .hero h1 span {
+            display: block;
+        }
+
+        .hero p {
+            font-size: 24px;
+            color: var(--text-secondary);
+            max-width: 800px;
+            margin: 0 auto 48px;
+            line-height: 1.6;
+        }
+
+        .hero p .brand,
+        .hero p .brand-box {
+            font-weight: 600;
+        }
+
+        .checkmarks {
+            display: flex;
+            gap: 32px;
+            justify-content: center;
+            margin: 48px 0;
+            color: var(--text-secondary);
+            font-size: 18px;
+        }
+
+        .checkmark {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .checkmark::before {
+            content: '✓';
+            color: #3245FF;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 24px;
+        }
+
+        .section-title {
+            font-size: 48px;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 64px;
+            letter-spacing: -0.02em;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 32px;
+            margin: 64px 0;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 40px;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            border-color: rgba(50, 69, 255, 0.3);
+            transform: translateY(-4px);
+        }
+
+        .feature-card h3 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin: 64px 0;
+            text-align: center;
+        }
+
+        .stat-item {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 32px;
+        }
+
+        .stat-number {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 16px;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 18px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            margin-top: 48px;
+        }
+
+        .cta {
+            display: inline-flex;
+            align-items: center;
+            padding: 16px 32px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 18px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .cta-primary {
+            background: var(--gradient);
+            color: white;
+        }
+
+        .cta-primary:hover {
+            transform: translateY(-2px);
+        }
+
+        .cta-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .cta-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .comparison-section {
+            margin-top: 80px;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .comparison-item {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 32px;
+        }
+
+        .comparison-item.highlighted {
+            border-color: rgba(50, 69, 255, 0.5);
+            background: rgba(50, 69, 255, 0.1);
+        }
+
+        .comparison-item ul {
+            list-style: none;
+            margin-top: 24px;
+        }
+
+        .comparison-item li {
+            color: var(--text-secondary);
+            margin: 12px 0;
+            padding-left: 24px;
+            position: relative;
+        }
+
+        .comparison-item li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+        }
+        .navbar {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                background: rgba(26, 26, 46, 0.8);
+                backdrop-filter: blur(12px);
+                -webkit-backdrop-filter: blur(12px);
+                border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+                padding: 16px 24px;
+                z-index: 1000;
+            }
+
+            .navbar-container {
+                max-width: 1200px;
+                margin: 0 auto;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .navbar-brand {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                text-decoration: none;
+            }
+
+            .navbar-brand .logo {
+                font-size: 24px;
+                font-weight: 800;
+                background: var(--gradient);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            .navbar-links {
+                display: flex;
+                gap: 32px;
+                align-items: center;
+            }
+
+            .navbar-link {
+                color: var(--text-secondary);
+                text-decoration: none;
+                font-weight: 500;
+                font-size: 15px;
+                transition: color 0.2s ease;
+            }
+
+            .navbar-link:hover {
+                color: var(--text-primary);
+            }
+
+            .navbar-buttons {
+                display: flex;
+                gap: 16px;
+                align-items: center;
+            }
+
+            .navbar-button {
+                padding: 8px 16px;
+                border-radius: 6px;
+                font-size: 15px;
+                font-weight: 500;
+                text-decoration: none;
+                transition: all 0.2s ease;
+            }
+
+            .navbar-button.primary {
+                background: var(--gradient);
+                color: white;
+            }
+
+            .navbar-button.secondary {
+                color: var(--text-primary);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .navbar-button:hover {
+                transform: translateY(-1px);
+            }
+
+            /* 调整 hero 部分的上边距，为导航栏留出空间 */
+            .hero {
+                padding-top: 180px;
+            }
+
+            /* 添加移动端响应式样式 */
+            @media (max-width: 768px) {
+                .navbar-links {
+                    display: none;
+                }
+
+                .navbar-buttons {
+                    display: none;
+                }
+
+                .navbar-mobile-menu {
+                    display: block;
+                    color: var(--text-primary);
+                    font-size: 24px;
+                    cursor: pointer;
+                }
+            }
+
+        /* 修改 GitHub 图标按钮的样式 */
+        .navbar-buttons .navbar-button:has(.fa-github) {
+            background: none;
+            border: none;
+            padding: 0;
+            margin-right: 16px;
+        }
+
+        .navbar-buttons .fa-github {
+            font-size: 24px;
+            color: var(--text-primary);
+            transition: opacity 0.2s ease;
+        }
+
+        .navbar-buttons .fa-github:hover {
+            opacity: 0.8;
+        }
+    </style>
+
+        <!-- 在 <body> 标签开始处添加导航栏 -->
+        <nav class="navbar">
+            <div class="navbar-container">
+                <a href="/" class="navbar-brand">
+                    <span class="logo">Riffle</span>
+                </a>
+
+                <!-- <div class="navbar-links">
+                    <a href="#features" class="navbar-link">Features</a>
+                    <a href="#performance" class="navbar-link">Performance</a>
+                    <a href="#docs" class="navbar-link">Documentation</a>
+                    <a href="#about" class="navbar-link">About</a>
+                </div> -->
+
+                <div class="navbar-buttons">
+                    <a href="https://github.com/zuston/r1" class="navbar-button secondary" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <!-- <a href="#get-started" class="navbar-button primary">Get Started</a> -->
+                </div>
+            </div>
+        </nav>
+</head>
+<body>
+    <section class="hero">
+        <h1>
+            <span>Next-Gen Shuffle Service</span>
+        </h1>
+        <p>A high-performance Rust implementation of <span class="brand-box">Apache Uniffle</span>, delivering unparalleled performance for large-scale data processing workloads in your infrastructure.</p>
+
+        <div class="checkmarks">
+            <div class="checkmark">production ready</div>
+            <div class="checkmark">50% faster than Spark ESS</div>
+            <div class="checkmark">infinitely scalable</div>
+        </div>
+
+        <div class="cta-buttons">
+            <a href="#" class="cta cta-primary">Get Started</a>
+            <a href="https://github.com/zuston/r1" class="cta cta-secondary" target="_blank">View on GitHub</a>
+        </div>
+    </section>
+
+    <div class="container">
+        <h2 class="section-title">Set it and forget it</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3>Built on Apache Uniffle</h3>
+                <p>Leveraging the power of <span class="brand">Riffle</span>'s Rust implementation to provide superior shuffle service performance.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Superior Performance</h3>
+                <p>Up to 50% faster than vanilla Spark ESS with optimized URPC implementation.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Flexible Storage</h3>
+                <p>Support for Memory, LocalFile, and HDFS with intelligent hybrid storage options.</p>
+            </div>
+        </div>
+
+        <h2 class="section-title">Performance that speaks for itself</h2>
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-number">50%</div>
+                <div class="stat-label">Faster than vanilla Uniffle</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">3.2min</div>
+                <div class="stat-label">TeraSort 273G Data</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">2000+</div>
+                <div class="stat-label">Concurrent Spark Jobs</div>
+            </div>
+        </div>
+
+        <div class="comparison-section">
+            <h2 class="section-title">Why <span class="brand">Riffle</span>?</h2>
+            <div class="comparison-grid">
+                <div class="comparison-item">
+                    <h3>Traditional <span class="brand-box">Apache Uniffle</span></h3>
+                    <ul>
+                        <li>Standard performance</li>
+                        <li>Java-based implementation</li>
+                        <li>Basic storage options</li>
+                        <li>Periodic GC pauses</li>
+                        <li>Fluctuating memory usage</li>
+                        <li>Traditional I/O operations</li>
+                    </ul>
+                </div>
+                <div class="comparison-item highlighted">
+                    <h3><span class="brand">Riffle</span> Advantages</h3>
+                    <ul>
+                        <li>50% faster performance and lower latency</li>
+                        <li>Rust-powered efficiency</li>
+                        <li>Advanced hybrid storage</li>
+                        <li>No JVM GC pauses</li>
+                        <li>Predictable memory consumption</li>
+                        <li>Direct I/O for improved performance and lower CPU usage</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
