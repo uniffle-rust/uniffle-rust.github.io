@@ -426,6 +426,19 @@
 
                 .hero h1 .brand {
                     font-size: 48px;
+                    background: var(--gradient);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    background-clip: text;
+                }
+
+                /* 导航栏 logo 也确保渐变色 */
+                .navbar-brand .logo {
+                    background: var(--gradient);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    background-clip: text;
+                    color: transparent;
                 }
 
                 .hero p {
