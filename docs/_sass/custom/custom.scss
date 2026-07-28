@@ -468,10 +468,11 @@
   }
 
   h2 {
-    max-width: 28ch;
+    max-width: none;
     margin: 0.375rem 0 0.5rem;
-    font-size: clamp(1.4rem, 3vw, 2rem);
-    line-height: 1.15;
+    font-size: clamp(1.25rem, 2.3vw, 1.5rem);
+    line-height: 1.2;
+    white-space: nowrap;
 
     a {
       color: $body-heading-color;
@@ -569,7 +570,8 @@
   }
 }
 
-.read-ahead-flow {
+.read-ahead-flow,
+.io-uring-flow {
   display: grid;
   grid-template-columns: minmax(7rem, 1fr) auto minmax(7rem, 1fr) auto minmax(7rem, 1fr) auto minmax(7rem, 1fr);
   gap: 0.5rem;
@@ -657,6 +659,10 @@
 }
 
 @media (max-width: 48rem) {
+  .blog-list__item h2 {
+    white-space: normal;
+  }
+
   .blog-metrics,
   .blog-strategy {
     grid-template-columns: 1fr;
@@ -672,7 +678,8 @@
     }
   }
 
-  .read-ahead-flow {
+  .read-ahead-flow,
+  .io-uring-flow {
     grid-template-columns: 1fr;
     max-width: 20rem;
     margin-right: auto;

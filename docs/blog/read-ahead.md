@@ -1,7 +1,7 @@
 ---
 title: Read ahead for faster shuffle reads
 parent: Blog
-nav_order: 1
+nav_order: 2
 permalink: /blog/read-ahead/
 description: How Riffle uses read ahead and the Linux page cache to reduce shuffle-read latency.
 ---
