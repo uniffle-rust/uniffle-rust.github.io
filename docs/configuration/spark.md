@@ -1,6 +1,9 @@
 ---
 title: Spark and Apache Uniffle
 description: Connect Spark applications to a Riffle shuffle-server deployment.
+parent: Configuration
+nav_order: 3
+permalink: /configuration/spark/
 ---
 
 # Spark and Apache Uniffle
@@ -44,6 +47,7 @@ Built-in capability tags such as `ss_v4`, `ss_v5`, and `GRPC` are retained by th
 
 The [Docker quick start](/guide/docker) provides a working example with Spark, a coordinator, and two Riffle servers.
 
-::: warning Version alignment
-This guide documents the current branch. For an existing cluster, use the changelog and the linked source tag to verify its supported transports and configuration names.
-:::
+{: .warning }
+> This guide documents the current branch. For an existing cluster, use the
+> changelog and the linked source tag to verify its supported transports and
+> configuration names.

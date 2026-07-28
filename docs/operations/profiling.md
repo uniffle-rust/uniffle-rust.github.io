@@ -1,6 +1,9 @@
 ---
 title: Profiling
 description: Build Riffle with profiling support and capture heap or CPU flamegraphs.
+parent: Operations
+nav_order: 2
+permalink: /operations/profiling/
 ---
 
 # Profiling
@@ -28,6 +31,6 @@ The heap endpoint produces heap profiling data; the pprof endpoint captures a CP
 4. Capture the same duration during the problem.
 5. Compare profiles together with request rate, memory pressure, and storage latency.
 
-::: warning Production overhead
-Profiling consumes CPU, memory, and I/O. Start with a short capture on one server and observe its impact before collecting from additional processes.
-:::
+{: .warning }
+> Profiling consumes CPU, memory, and I/O. Start with a short capture on one
+> server and observe its impact before collecting from additional processes.

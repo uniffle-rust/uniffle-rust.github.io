@@ -1,5 +1,8 @@
-node_modules
-docs/.vitepress/cache
-docs/.vitepress/dist
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
+vendor/
+.bundle/
 .DS_Store
 npm-debug.log*

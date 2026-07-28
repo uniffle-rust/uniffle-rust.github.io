@@ -1,6 +1,9 @@
 ---
 title: Benchmark
 description: Environment, configuration, and TeraSort results reported by the Riffle project.
+parent: Reference
+nav_order: 1
+permalink: /reference/benchmark/
 ---
 
 # Benchmark
@@ -46,8 +49,9 @@ The parenthesized values are the two phases reported by the original benchmark.
 
 The Riffle custom stream protocol is named `NETTY` on the Java side.
 
-::: info Read results in context
-These figures are project-reported measurements, not a guarantee for another cluster. Compare with the same Spark version, data shape, network, disks, storage capacity, and concurrency before drawing conclusions.
-:::
+{: .note }
+> These figures are project-reported measurements, not a guarantee for another
+> cluster. Compare with the same Spark version, data shape, network, disks,
+> storage capacity, and concurrency before drawing conclusions.
 
 See the [source README](https://github.com/zuston/riffle#readme) for the original report.

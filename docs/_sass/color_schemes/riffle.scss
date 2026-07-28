@@ -1,0 +1,57 @@
+$color-scheme: light;
+
+// A restrained zinc palette inspired by modern shadcn interfaces.
+$white: #fafafa;
+
+$grey-dk-000: #a1a1aa;
+$grey-dk-100: #52525b;
+$grey-dk-200: #3f3f46;
+$grey-dk-250: #27272a;
+$grey-dk-300: #18181b;
+
+$grey-lt-000: #f4f4f5;
+$grey-lt-100: #e4e4e7;
+$grey-lt-200: #d4d4d8;
+$grey-lt-300: #a1a1aa;
+
+$purple-000: #2563eb;
+$purple-100: #1d4ed8;
+$purple-200: #1e40af;
+$purple-300: #172554;
+
+$blue-000: #60a5fa;
+$blue-100: #3b82f6;
+$blue-200: #2563eb;
+$blue-300: #1d4ed8;
+
+$green-000: #86efac;
+$green-100: #4ade80;
+$green-200: #16a34a;
+$green-300: #15803d;
+
+$yellow-000: #fde68a;
+$yellow-100: #fcd34d;
+$yellow-200: #d97706;
+$yellow-300: #b45309;
+
+$red-000: #fca5a5;
+$red-100: #f87171;
+$red-200: #dc2626;
+$red-300: #b91c1c;
+
+$body-background-color: #fafafa;
+$body-heading-color: #18181b;
+$body-text-color: #3f3f46;
+$link-color: #2563eb;
+$nav-child-link-color: #52525b;
+$sidebar-color: #f4f4f5;
+$base-button-color: #fafafa;
+$btn-primary-color: #18181b;
+$code-background-color: #f4f4f5;
+$feedback-color: #e4e4e7;
+$table-background-color: #fafafa;
+$search-background-color: #fafafa;
+$search-result-preview-color: #71717a;
+$border-color: #e4e4e7;
+
+@import "./vendor/accessible-pygments/github-light";

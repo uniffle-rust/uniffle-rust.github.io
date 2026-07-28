@@ -1,6 +1,9 @@
 ---
 title: Build from source
 description: Compile Riffle server, coordinator, and command-line tools from source.
+parent: Getting started
+nav_order: 3
+permalink: /guide/build/
 ---
 
 # Build from source
@@ -40,9 +43,9 @@ Build with the Linux `io_uring` local I/O engine:
 cargo build --release -p riffle-server --features io-uring
 ```
 
-::: tip Keep `riffle-ctl` lean
-Build `riffle-ctl` separately. The tool does not need to link `libhdfs` or `libjvm.so`, even when the server is built with HDFS-related features.
-:::
+{: .tip }
+> Build `riffle-ctl` separately. The tool does not need to link `libhdfs` or
+> `libjvm.so`, even when the server is built with HDFS-related features.
 
 ## Run the server
 

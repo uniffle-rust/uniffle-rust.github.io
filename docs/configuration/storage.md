@@ -1,6 +1,9 @@
 ---
 title: Storage backends
 description: Configure Riffle memory, local disk, HDFS, and hybrid spill behavior.
+parent: Configuration
+nav_order: 2
+permalink: /configuration/storage/
 ---
 
 # Storage backends

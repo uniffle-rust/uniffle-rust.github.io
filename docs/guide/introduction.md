@@ -1,6 +1,9 @@
 ---
 title: Introduction
 description: Understand where Riffle fits in an Apache Uniffle deployment.
+parent: Getting started
+nav_order: 1
+permalink: /guide/introduction/
 ---
 
 # Introduction
@@ -32,7 +35,7 @@ Riffle shuffle servers
 - **Operational control.** Metrics, profiling endpoints, disk throttling, and `riffle-ctl` are part of the normal workflow.
 - **Rust implementation.** The server targets efficient resource use and predictable behavior under sustained shuffle pressure.
 
-The project reports production deployment at nearly **10 PB of shuffle data per day** and **500 GB/s aggregate throughput** for hyperscale Spark workloads. See the [benchmark context](/reference/benchmark) before comparing those numbers with another environment.
+The project reports production deployment at **16 PB of shuffle data per day** and **600 GB/s aggregate throughput** for hyperscale Spark workloads. See the [benchmark context](/reference/benchmark) before comparing those numbers with another environment.
 
 ## Components
 

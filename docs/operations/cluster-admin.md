@@ -1,6 +1,9 @@
 ---
 title: Cluster administration
 description: Inspect and update a Riffle cluster with riffle-ctl and SQL queries.
+parent: Operations
+nav_order: 4
+permalink: /operations/cluster-admin/
 ---
 
 # Cluster administration
@@ -61,6 +64,7 @@ When `--instance` is omitted, instance commands read JSON Lines from standard in
 
 Pipeline mode makes the selection explicit and reviewable: run the query by itself first, inspect the resulting instances, and then pipe the same query into the update.
 
-::: danger Administrative commands change cluster state
-Confirm the coordinator endpoint, SQL filter, and selected instances before running `instance set`, `add`, `remove`, or `kill` against a production cluster.
-:::
+{: .danger }
+> Confirm the coordinator endpoint, SQL filter, and selected instances before
+> running `instance set`, `add`, `remove`, or `kill` against a production
+> cluster.

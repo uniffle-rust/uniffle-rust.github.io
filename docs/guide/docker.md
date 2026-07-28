@@ -1,6 +1,9 @@
 ---
 title: Docker quick start
 description: Start a complete Riffle, Uniffle, Spark, Prometheus, and Grafana environment.
+parent: Getting started
+nav_order: 2
+permalink: /guide/docker/
 ---
 
 # Docker quick start
@@ -66,8 +69,10 @@ docker compose --profile test up riffle-test
 docker compose down
 ```
 
-::: warning Local environment only
-The included credentials, port exposure, and single-network layout are intended for development and integration testing. Review security, persistence, and resource limits before adapting the Compose file for another environment.
-:::
+{: .warning }
+> The included credentials, port exposure, and single-network layout are
+> intended for development and integration testing. Review security,
+> persistence, and resource limits before adapting the Compose file for another
+> environment.
 
 For the source integration guide, see [`dev/integration/README.md`](https://github.com/zuston/riffle/blob/master/dev/integration/README.md).

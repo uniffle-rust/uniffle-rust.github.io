@@ -1,6 +1,9 @@
 ---
 title: Monitoring
 description: Export Riffle metrics to Prometheus and use the bundled Grafana dashboard.
+parent: Operations
+nav_order: 1
+permalink: /operations/monitoring/
 ---
 
 # Monitoring

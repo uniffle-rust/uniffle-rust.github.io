@@ -1,6 +1,9 @@
 ---
 title: Disk performance
 description: Configure io_uring, direct I/O flushes, and throughput limits for Riffle local storage.
+parent: Operations
+nav_order: 3
+permalink: /operations/disk-performance/
 ---
 
 # Disk performance

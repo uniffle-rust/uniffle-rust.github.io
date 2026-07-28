@@ -1,6 +1,9 @@
 ---
 title: Server configuration
 description: Configure the current Riffle server process and runtime services.
+parent: Configuration
+nav_order: 1
+permalink: /configuration/server/
 ---
 
 # Server configuration
