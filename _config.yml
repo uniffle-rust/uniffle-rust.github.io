@@ -10,6 +10,10 @@ repository: zuston/riffle
 source: docs
 destination: _site
 
+# Set this directly for a non-Actions deployment, or provide
+# CLOUDFLARE_WEB_ANALYTICS_TOKEN in the build environment.
+cloudflare_web_analytics_token: ""
+
 search_enabled: true
 search:
   heading_level: 3
