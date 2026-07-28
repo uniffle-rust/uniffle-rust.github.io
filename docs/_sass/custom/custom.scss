@@ -10,6 +10,12 @@
   border-right: 1px solid $border-color;
 }
 
+@include mq(md) {
+  .site-nav {
+    padding-top: $sp-5;
+  }
+}
+
 .main-header {
   border-bottom-color: $border-color;
 }
@@ -125,6 +131,10 @@
     margin-top: 0.125em;
     margin-bottom: 0.125em;
   }
+}
+
+.main-content .changelog > h1:first-of-type {
+  margin-top: 0;
 }
 
 .changelog-release {

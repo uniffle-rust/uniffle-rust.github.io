@@ -9,9 +9,8 @@ description: Production-ready, Apache Uniffle-compatible shuffle infrastructure 
 # Riffle
 {: .home-title }
 
-High-throughput shuffle infrastructure written in Rust, fully compatible with
-Apache Uniffle, and proven in production at **16 PB per day** and
-**600 GB/s aggregate throughput**.
+A Rust shuffle server fully compatible with Apache Uniffle. Proven in
+production at **16 PB/day** and **600 GB/s**.
 {: .home-lead }
 
 [Get started]({% link guide/introduction.md %}){: .btn .btn-primary .mr-2 }
