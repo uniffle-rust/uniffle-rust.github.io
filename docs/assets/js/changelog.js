@@ -60,5 +60,7 @@
   const hashTarget = hashId && document.getElementById(hashId);
   if (hashTarget instanceof HTMLDetailsElement) {
     hashTarget.open = true;
+  } else {
+    changelog.querySelector("details.changelog-release")?.setAttribute("open", "");
   }
 })();
