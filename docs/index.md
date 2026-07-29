@@ -18,6 +18,17 @@ production at **16 PB/day** and **600 GB/s**.
 
 ---
 
+## Hybrid storage, tiered by design
+
+Spark executors write through the standard Uniffle client into the Riffle
+cluster. Inside each server, data spills across memory, NVMe local disks, and
+HDFS, so hot partitions stay fast while cold data drains to remote storage.
+
+<figure class="home-figure">
+  <img src="{% link assets/images/riffle-arch-hybrid-storage.png %}" alt="Riffle architecture: Spark executors in a K8s pod write to the Riffle shuffle cluster, where each server tiers data across memory, NVMe SSD, and HDFS">
+  <figcaption>Spark client to Riffle cluster, with the memory &rarr; NVMe &rarr; HDFS spill path inside each shuffle server.</figcaption>
+</figure>
+
 ## Performance first
 
 Riffle is engineered for sustained shuffle pressure with efficient memory use,
