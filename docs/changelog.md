@@ -8,6 +8,30 @@ description: Every Riffle version and the changes introduced in each release.
 
 # Changelog
 
+## [v0.26.0](https://github.com/zuston/riffle/releases/tag/v0.26.0)
+
+_August 3, 2026_
+
+#### What's Changed
+* fix(ctl): build riffle-ctl without hdrs to avoid libjvm dependency by @zuston in https://github.com/zuston/riffle/pull/638
+* fix(ctl): handle empty pipeline query output without error by @zuston in https://github.com/zuston/riffle/pull/639
+* feat(ctl): activate push down without running apps column in instances table by @zuston in https://github.com/zuston/riffle/pull/640
+* chore(ctl): remove postgres-server mechanism by @zuston in https://github.com/zuston/riffle/pull/641
+* refactor(ctl): re-org ctl commands by @zuston in https://github.com/zuston/riffle/pull/642
+* refactor(ctl): simplify commands by @zuston in https://github.com/zuston/riffle/pull/643
+* feat(urpc): add support of vectored tcp-stream write by @zuston in https://github.com/zuston/riffle/pull/644
+* fix(urpc): avoid extra copy when decoding strings by @zuston in https://github.com/zuston/riffle/pull/645
+* perf(urpc): reduce buffer copies in streaming parse by @zuston in https://github.com/zuston/riffle/pull/646
+* fix(urpc): skip shuffle server fields in streaming parse by @zuston in https://github.com/zuston/riffle/pull/647
+* fix(urpc): enable streaming parse by default by @zuston in https://github.com/zuston/riffle/pull/648
+* feat(hdfs): update hdfs-native version to 0.14.3 by @zuston in https://github.com/zuston/riffle/pull/652
+* feat(hdfs): introduce the huge partition spill threshold config option by @zuston in https://github.com/zuston/riffle/pull/651
+* chore: bump version to 0.26.0 by @zuston in https://github.com/zuston/riffle/pull/653
+
+
+**Full Changelog**: https://github.com/zuston/riffle/compare/v0.25.0-rc1...v0.26.0
+
+
 ## [v0.26.0-rc1](https://github.com/zuston/riffle/releases/tag/v0.26.0-rc1)
 
 _July 29, 2026_
