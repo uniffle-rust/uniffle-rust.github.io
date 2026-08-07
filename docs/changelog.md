@@ -8,6 +8,26 @@ description: Every Riffle version and the changes introduced in each release.
 
 # Changelog
 
+## [v0.27.0-rc1](https://github.com/zuston/riffle/releases/tag/v0.27.0-rc1)
+
+_August 6, 2026_
+
+#### What's Changed
+* fix(server): disable jemalloc memory-prof feature for the better performance by default by @zuston in https://github.com/zuston/riffle/pull/655
+* feat(server): improve release compiler level to 3 by @zuston in https://github.com/zuston/riffle/pull/656
+* fix(uring): validate actual read length against request by @zuston in https://github.com/zuston/riffle/pull/658
+* feat(localfile): limit concurrent writes per disk by @zuston in https://github.com/zuston/riffle/pull/657
+* feat(mem): introduce indexed memory buffer with lazy block-position index by @zuston in https://github.com/zuston/riffle/pull/660
+* feat(urpc): add pluggable `io_uring` net engine by @zuston in https://github.com/zuston/riffle/pull/661
+* feat(ci): publish reusable release builder images by @zuston in https://github.com/zuston/riffle/pull/663
+* fix(hdrs): propagate HDFS file close errors by @zuston in https://github.com/zuston/riffle/pull/665
+* feat(localfile): remove `sync_all` to improve performance by @zuston in https://github.com/zuston/riffle/pull/654
+* chore: bump version to 0.27.0 by @zuston in https://github.com/zuston/riffle/pull/666
+
+
+**Full Changelog**: https://github.com/zuston/riffle/compare/v0.26.0...v0.27.0-rc1
+
+
 ## [v0.26.0](https://github.com/zuston/riffle/releases/tag/v0.26.0)
 
 _August 3, 2026_
