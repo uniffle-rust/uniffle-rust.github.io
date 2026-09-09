@@ -8,6 +8,34 @@ description: Every Riffle version and the changes introduced in each release.
 
 # Changelog
 
+## [v0.28.0-rc1](https://github.com/zuston/riffle/releases/tag/v0.28.0-rc1)
+
+_September 9, 2026_
+
+#### What's Changed
+* chore(deps): prune dependencies by @zuston in https://github.com/zuston/riffle/pull/667
+* refactor(coordinator): re-org coordinator module by @zuston in https://github.com/zuston/riffle/pull/668
+* feat(ci): publish reusable `integration` builder images by @zuston in https://github.com/zuston/riffle/pull/678
+* feat(coordinator): support exclusive server tags by @zuston in https://github.com/zuston/riffle/pull/679
+* fix(coordinator): Expire stale shuffle servers based on heartbeat timeout by @zuston in https://github.com/zuston/riffle/pull/680
+* feat(coordinator): add riffle-coordinator into the integration test CI by @zuston in https://github.com/zuston/riffle/pull/681
+* feat(coordinator): Introduce access plugin by @zuston in https://github.com/zuston/riffle/pull/682
+* feat(coordinator): Introduce JS as dynamic access plugin by @zuston in https://github.com/zuston/riffle/pull/683
+* feat(urpc)(uring): make frame parsing zero-copy by @zuston in https://github.com/zuston/riffle/pull/685
+* feat(ci): reuse release builder image for `with-hdrs` workflow job by @zuston in https://github.com/zuston/riffle/pull/689
+* feat(urpc)(uring): centralize frame response encoding by @zuston in https://github.com/zuston/riffle/pull/686
+* feat(urpc)(uring): disable sendfile/splice mechanism by default by @zuston in https://github.com/zuston/riffle/pull/687
+* feat(urpc)(uring): record the metrics of urpc connection and parsing latency by @zuston in https://github.com/zuston/riffle/pull/690
+* feat(urpc)(uring): add CI tests by @zuston in https://github.com/zuston/riffle/pull/692
+* feat(urpc)(uring): pin handler runtimes to urpc engine cores by @zuston in https://github.com/zuston/riffle/pull/691
+* feat: configure TCP keepalive for server connections by @zuston in https://github.com/zuston/riffle/pull/693
+* fix(urpc)(uring): wait for completions only at io depth capacity by @zuston in https://github.com/zuston/riffle/pull/694
+* chore: bump version to 0.28.0 by @zuston in https://github.com/zuston/riffle/pull/695
+
+
+**Full Changelog**: https://github.com/zuston/riffle/compare/v0.27.0...v0.28.0-rc1
+
+
 ## [v0.27.0](https://github.com/zuston/riffle/releases/tag/v0.27.0)
 
 _August 11, 2026_
