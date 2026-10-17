@@ -8,6 +8,32 @@ description: Every Riffle version and the changes introduced in each release.
 
 # Changelog
 
+## [v0.29.0-rc1](https://github.com/zuston/riffle/releases/tag/v0.29.0-rc1)
+
+_October 16, 2026_
+
+#### What's Changed
+* feat(memory): add allocated buffer high watermark health check by @zuston in https://github.com/zuston/riffle/pull/696
+* refactor(store): unify owned and spilled write contexts by @zuston in https://github.com/zuston/riffle/pull/698
+* fix(uring): avoid io_uring idle wait being charged as iowait by @zuston in https://github.com/zuston/riffle/pull/697
+* refactor(store): re-define trait for the store by @zuston in https://github.com/zuston/riffle/pull/699
+* chore: attach the production rpc throughput screenshots by @zuston in https://github.com/zuston/riffle/pull/700
+* feat(server): stable sequence for all tags by @zuston in https://github.com/zuston/riffle/pull/701
+* fix(localfile): Add slash on deleting meta with app prefix by @zuston in https://github.com/zuston/riffle/pull/702
+* feat(localfile): attach lock partition uid for await-tree when waiting flushing partition file lock by @zuston in https://github.com/zuston/riffle/pull/704
+* feat(localfile): add metric of `localfile_spill_partition_lock_waiting_number` to indicate the spill lock retention by @zuston in https://github.com/zuston/riffle/pull/705
+* feat: upgrade logforth to 0.30.1 version to eliminate log buffer OOM by @zuston in https://github.com/zuston/riffle/pull/706
+* feat(localfile): introduce flushing scheduling policy about partition priority by @zuston in https://github.com/zuston/riffle/pull/703
+* feat(localfile): move spill scheduling policy to hybrid store config by @zuston in https://github.com/zuston/riffle/pull/708
+* feat: introduce app stats to activate appInfos report on heartbeat by @zuston in https://github.com/zuston/riffle/pull/709
+* feat(coordinator): collect and expose app stats into http api by @zuston in https://github.com/zuston/riffle/pull/710
+* chore: remove agents.md by @zuston in https://github.com/zuston/riffle/pull/714
+* chore: bump version to 0.29.0 by @zuston in https://github.com/zuston/riffle/pull/715
+
+
+**Full Changelog**: https://github.com/zuston/riffle/compare/v0.28.0-rc1...v0.29.0-rc1
+
+
 ## [v0.28.0-rc1](https://github.com/zuston/riffle/releases/tag/v0.28.0-rc1)
 
 _September 9, 2026_
