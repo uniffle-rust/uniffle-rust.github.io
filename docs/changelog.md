@@ -8,6 +8,28 @@ description: Every Riffle version and the changes introduced in each release.
 
 # Changelog
 
+## [v0.30.0-rc1](https://github.com/zuston/riffle/releases/tag/v0.30.0-rc1)
+
+_October 21, 2026_
+
+#### What's Changed
+* chore: remove legacy configs and grafana template by @zuston in https://github.com/zuston/riffle/pull/716
+* refactor: extract coordinator + server startup logic into a reusable service by @zuston in https://github.com/zuston/riffle/pull/717
+* chore(deps): upgrade tonic to 0.14.6 and prost to 0.14 by @zuston in https://github.com/zuston/riffle/pull/718
+* fix(coordinator): adapt TCP incoming to tonic 0.14 by @zuston in https://github.com/zuston/riffle/pull/719
+* fix(bench): fix compilation failures by making frame helpers public by @zuston in https://github.com/zuston/riffle/pull/720
+* feat: remove rust nightly feature usage by @zuston in https://github.com/zuston/riffle/pull/721
+* feat: introduce riffle-client by @zuston in https://github.com/zuston/riffle/pull/711
+* feat(client): introduce mini_cluster by @zuston in https://github.com/zuston/riffle/pull/722
+* fix(server)(test): fix flaky idle partition scheduling assertion for event-bus by @zuston in https://github.com/zuston/riffle/pull/726
+* feat(client): add support of compression by @zuston in https://github.com/zuston/riffle/pull/724
+* feat(client): add support of re-assignment by @zuston in https://github.com/zuston/riffle/pull/723
+* chore: upgrade version to 0.30.0 by @zuston in https://github.com/zuston/riffle/pull/728
+
+
+**Full Changelog**: https://github.com/zuston/riffle/compare/v0.29.0-rc1...v0.30.0-rc1
+
+
 ## [v0.29.0-rc1](https://github.com/zuston/riffle/releases/tag/v0.29.0-rc1)
 
 _October 16, 2026_
